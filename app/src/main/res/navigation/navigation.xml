@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/allNotesFragment">
+
+    <fragment
+        android:id="@+id/allNotesFragment"
+        android:name="com.example.mynotes.AllNotesFragment"
+        android:label="Note"
+        tools:layout="@layout/fragment_all_notes" >
+        <action
+            android:id="@+id/action_allNotesFragment_to_edit_fragment2"
+            app:destination="@id/edit_fragment2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/edit_fragment2"
+        android:name="com.example.mynotes.EditFragment"
+        android:label="Note"
+        tools:layout="@layout/fragment_edit_fragment">
+
+        <argument
+            android:name="updateNotes"
+            android:defaultValue="@null"
+            app:argType="com.example.mynotes.database.Notes"
+            app:nullable="true"/>
+    </fragment>
+
+</navigation>
